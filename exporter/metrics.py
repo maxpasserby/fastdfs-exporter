@@ -99,10 +99,10 @@ class StorageMetrics:
                                                  ['group', 'storage', 'ip'],
                                                  registry=registry)
 
-        # 已分配的连接数（池化连接总数）
+        # 累积已分配的连接数（自启动以来）
         # 取值 connection.alloc_count
         self.__fastdfs_storage_connection_alloc_count = Gauge('fastdfs_storage_connection_alloc_count',
-                                                       "the number of allocated connections (total pooled connections) of a fastdfs storage server",
+                                                       "the total number of connections allocated from the pool (since server startup) of a fastdfs storage server",
                                                        ['group', 'storage', 'ip'],
                                                        registry=registry)
         # 当前使用的连接数
@@ -111,7 +111,6 @@ class StorageMetrics:
                                                          "the number of currently used connections of a fastdfs storage server",
                                                          ['group', 'storage', 'ip'],
                                                          registry=registry)
-        # todo
         # 最大允许连接数
         # 取值 connection.max_count
         self.__fastdfs_storage_connection_max_count = Gauge('fastdfs_storage_connection_max_count',
