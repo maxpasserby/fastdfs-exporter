@@ -52,7 +52,7 @@ class Collector:
             metrics.set_storage_server_count(group_name, group_info['storage server count'])
             metrics.set_active_storage_server_count(group_name, group_info['active server count'])
             metrics.set_disk_total_space(group_name, group_info['disk total space'])
-            metrics.set_disk_total_space(group_name, group_info['disk free space'])
+            metrics.set_disk_free_space(group_name, group_info['disk free space'])
 
     def __build_storage_metrics(self, group_list: list) -> None:
         if not any('storage' in item for item in group_list):
