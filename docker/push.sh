@@ -11,7 +11,7 @@ function verify() {
       exit 1
   fi
 
-  if ! docker images | grep -q "${IMAGE}"; then
+  if ! docker images | grep -maxpasserby/fastdfs-exporter | grep "${IMAGE}"; then
     echo -e ">>> There is no ${IMAGE} image, Please execute the build.sh to build an image."
     exit 1
   fi

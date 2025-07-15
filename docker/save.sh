@@ -2,7 +2,7 @@
 
 VERSION=$(cat ../VERSION)
 IMAGE="maxpasserby/fastdfs-exporter:${VERSION}"
-IMAGE_FILE="docker.io~maxpasserby~fastdfs-exporter~${VERSION}.tar.gz"
+IMAGE_FILE="quay.io~maxpasserby~fastdfs-exporter~${VERSION}.tar.gz"
 
 function verify() {
   if command -v docker &> /dev/null; then
@@ -12,7 +12,7 @@ function verify() {
       exit 1
   fi
 
-  if ! docker images | grep -q "${IMAGE}"; then
+  if ! docker images | grep -maxpasserby/fastdfs-exporter | grep "${IMAGE}"; then
     echo -e ">>> There is no ${IMAGE} image, Please execute the build.sh to build an image."
     exit 1
   fi
